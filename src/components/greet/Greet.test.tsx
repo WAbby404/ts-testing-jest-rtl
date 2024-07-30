@@ -19,4 +19,10 @@ describe("Greet", () => {
     const textElement = screen.getByText("Hello Abbyname");
     expect(textElement).toBeInTheDocument();
   });
+
+  test("renders wrongly", () => {
+    render(<Greet />);
+    const textElement = screen.getByText(/hello!/i);
+    expect(textElement).toBeInTheDocument();
+  });
 });

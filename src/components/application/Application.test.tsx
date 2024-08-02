@@ -4,6 +4,23 @@ import { Application } from "./Application";
 describe("Application", () => {
   test("renders corrrectly", () => {
     render(<Application />);
+
+    // const pageHeading = screen.getByRole("heading", {
+    //   name: "Job application form",
+    // });
+    const pageHeading = screen.getByRole("heading", {
+      level: 1,
+    });
+    expect(pageHeading).toBeInTheDocument();
+
+    // const sectionHeading = screen.getByRole("heading", {
+    //   name: "Section 1",
+    // });
+    const sectionHeading = screen.getByRole("heading", {
+      level: 2,
+    });
+    expect(sectionHeading).toBeInTheDocument();
+
     const nameElement = screen.getByRole("textbox", {
       name: "Name",
     });
